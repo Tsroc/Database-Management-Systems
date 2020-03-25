@@ -33,3 +33,8 @@ treatments: Displays the treatment table.\
 *Select t.id, p.name, t.details, t.xray, t.xray_path from treatment t INNER JOIN patient p ON t.patient_id = p.id*\
 \
 image_blobs: Used by treatments.php to diplay blob datatypes.
+
+## Database setup
+The xray folder is placed into the C: drive. The folder contains the xray images which are stored as blobs in the database.\
+The phpFiles folder contains both php scripts and the xray images, these files are placed in the wamp64/www folder.\
+The sqlFiles folder contains the sql scripts, these files are used to create, populate and modify the Dentist database.
