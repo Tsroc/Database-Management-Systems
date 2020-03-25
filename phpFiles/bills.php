@@ -29,7 +29,7 @@ header('Content-Type: text/html; charset=utf-8');
 				$password = "";
 				$database = "Dentist";				
 				
-				$query = "Select b.id, p.name, b.total_due, b.total_paid from bill b INNER JOIN patient p ON b.patient_id = p.id";
+				$query = "Select b.id, p.name, b.total_due, b.total_paid from bill b INNER JOIN treatment t ON b.treatment_id = t.id INNER JOIN patient p ON t.patient_id = p.id ORDER BY b.id ASC";
 				$connect = mysqli_connect($host,$user,$password,$database) or die("Problem connecting.");
 
 				mysqli_query($connect,"SET NAMES utf8");

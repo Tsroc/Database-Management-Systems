@@ -6,18 +6,19 @@ header('Content-Type: text/html; charset=utf-8');
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Treatment</title>
+		<title>Patients</title>
 	</head>	
 
 	<body>
-		<h4>TREATMENT</h4>
+		<h4>PATIENTS</h4>
 	
 		<table border="1">
+			
 			<tr>
 				<td><h2>ID</h2></td>
 				<td><h2>NAME</h2></td>
-				<td><h2>DETAILS</h2></td>
-				<td><h2>XRAY</h2></td>
+				<td><h2>ADDRESS</h2></td>
+				<td><h2>PHONE</h2></td>
 			</tr>
 
 			<?php			
@@ -27,9 +28,9 @@ header('Content-Type: text/html; charset=utf-8');
 				$password = "";
 				$database = "Dentist";				
 				
-				$query = "Select t.id, p.name, t.details, t.xray, t.xray_path from treatment t INNER JOIN patient p ON t.patient_id = p.id";
+				$query = "Select id, name, address, phone_no from patient";
 				$connect = mysqli_connect($host,$user,$password,$database) or die("Problem connecting.");
-				
+
 				mysqli_query($connect,"SET NAMES utf8");
 				$result = mysqli_query($connect,$query) or die("Bad Query.");
 				mysqli_close($connect);
@@ -38,10 +39,10 @@ header('Content-Type: text/html; charset=utf-8');
 					echo "<tr>";
 					echo "<td><h4>" .$row['id'] . "</h4></td>";
 					echo "<td><h4>" .$row['name'] . "</h4></td>";
-					echo "<td><h4>" .$row['details'] . "</h4></td>";
-					echo "<td><h4><img src=image_blobs.php?id=".$row['id']." width=200 height=150/></h4></td>";
+					echo "<td><h4>" .$row['address'] . "</h4></td>";
+					echo "<td><h4>" .$row['phone_no'] . "</h4></td>";
 				    echo "</tr>";
-				}	
+				}
 			?>
 
 		<table>
