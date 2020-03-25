@@ -44,6 +44,7 @@ Create Table Appointment (
 	id INT AUTO_INCREMENT PRIMARY KEY, patient_id INT, time TIME, date DATE,
 	specialist_id INT, reminder_sent BOOLEAN,
 	
-    FOREIGN KEY (patient_id) REFERENCES patient(id)
+    FOREIGN KEY (patient_id) REFERENCES patient(id),
+	FOREIGN KEY (specialist_id) REFERENCES specialist(id)
 
 ) Engine=InnoDB;
