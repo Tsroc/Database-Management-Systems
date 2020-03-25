@@ -21,12 +21,8 @@ INNER JOIN bill b ON b.treatment_id = t.id\
 LEFT JOIN specialist s ON s.id = a.specialist_id ORDER BY a.id ASC*\
 \
 bills: Displays the bill table.\
-<<<<<<< HEAD
-*Select b.id, p.name, b.total_due, b.total_paid from bill b INNER JOIN patient p ON b.id = p.id*\
-=======
 *Select b.id, p.name, b.total_due, b.total_paid from bill b INNER JOIN treatment t ON b.treatment_id = t.id\
 INNER JOIN patient p ON t.patient_id = p.id ORDER BY b.id ASC*\
->>>>>>> ec6e5e4d128e034fb89bc6c323eef40f0ff9173f
 \
 patient: Displays the patient table.\
 *Select id, name, address, phone_no from patient*\
